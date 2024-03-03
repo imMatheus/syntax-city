@@ -1,0 +1,24 @@
+syntax = "proto3";
+option go_package = "github.com/imMatheus/syntax-city/server/internal/game"; 
+
+message GetGameRequest {
+    string gameId = 1;
+}
+
+message Player {
+    string id = 1;
+    string name = 2;
+}
+
+message GameBoard {
+    string id = 1;
+    repeated Player players = 2;
+}
+
+message GetGameResponse{
+    GameBoard gameBoard = 1;
+}
+
+service Game {
+    rpc GetGame(GetGameRequest) returns (GetGameResponse);
+}
