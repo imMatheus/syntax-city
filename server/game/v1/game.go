@@ -31,20 +31,3 @@ func (g gameServer) GetGame(_ context.Context, req *connect.Request[gamev1.GetGa
 		},
 	}), nil
 }
-
-// func StartGameServer(lis net.Listener) error {
-// 	serverRegistrar := grpc.NewServer()
-// 	service := &Server{}
-// 	RegisterGameServer(serverRegistrar, service)
-
-// 	err := serverRegistrar.Serve(lis)
-// 	if err != nil {
-// 		log.Fatalf("impossible to serve game server: %s", err)
-// 	}
-
-// 	return nil
-// }
-
-// 1. Really like the buf lint step
-// 2. Dont really understand the v1 thing
-// 3. Have a link to a full repo example with greet server
