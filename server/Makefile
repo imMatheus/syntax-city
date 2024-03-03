@@ -1,7 +1,7 @@
 generate_grpc_code:
 	protoc \
-    --go_out=internal/game \
+    --go_out=. \
     --go_opt=paths=source_relative \
-    --go-grpc_out=internal/game \
+    --go-grpc_out=. \
     --go-grpc_opt=paths=source_relative \
     internal/game/game.proto
