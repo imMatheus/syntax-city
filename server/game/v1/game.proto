@@ -1,8 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/imMatheus/syntax-city/server/internal/game"; 
+package game.v1;
+option go_package = "github.com/imMatheus/syntax-city/server/gen/game/v1;gamev1"; 
 
 message GetGameRequest {
-    string gameId = 1;
+    string game_id = 1;
 }
 
 message Player {
@@ -16,9 +17,9 @@ message GameBoard {
 }
 
 message GetGameResponse{
-    GameBoard gameBoard = 1;
+    GameBoard game_board = 1;
 }
 
-service Game {
+service GameService {
     rpc GetGame(GetGameRequest) returns (GetGameResponse);
 }
