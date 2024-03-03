@@ -11,9 +11,15 @@ dependencies:
   '@connectrpc/connect':
     specifier: ^1.4.0
     version: 1.4.0(@bufbuild/protobuf@1.7.2)
+  '@connectrpc/connect-query':
+    specifier: ^1.3.1
+    version: 1.3.1(@bufbuild/protobuf@1.7.2)(@connectrpc/connect@1.4.0)(@tanstack/react-query@5.24.6)(react-dom@18.2.0)(react@18.2.0)
   '@connectrpc/connect-web':
     specifier: ^1.4.0
     version: 1.4.0(@bufbuild/protobuf@1.7.2)(@connectrpc/connect@1.4.0)
+  '@tanstack/react-query':
+    specifier: ^5.24.6
+    version: 5.24.6(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -179,6 +185,23 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@connectrpc/connect-query@1.3.1(@bufbuild/protobuf@1.7.2)(@connectrpc/connect@1.4.0)(@tanstack/react-query@5.24.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-VAogPNGVfnH2satUhXuG+ZUMj63xmTMl4McqyzCYw0ezzqt8i/tpbpf6OetlbvO45TTUYwaR4cAbzu8AgMNaFQ==}
+    peerDependencies:
+      '@bufbuild/protobuf': ^1.3.3
+      '@connectrpc/connect': ^1.1.2
+      '@tanstack/react-query': 5.x
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@bufbuild/protobuf': 1.7.2
+      '@connectrpc/connect': 1.4.0(@bufbuild/protobuf@1.7.2)
+      '@tanstack/react-query': 5.24.6(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      stable-hash: 0.0.4
+    dev: false
 
   /@connectrpc/connect-web@1.4.0(@bufbuild/protobuf@1.7.2)(@connectrpc/connect@1.4.0):
     resolution: {integrity: sha512-13aO4psFbbm7rdOFGV0De2Za64DY/acMspgloDlcOKzLPPs0yZkhp1OOzAQeiAIr7BM/VOHIA3p8mF0inxCYTA==}
@@ -778,6 +801,19 @@ packages:
   /@swc/types@0.1.5:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
     dev: true
+
+  /@tanstack/query-core@5.24.6:
+    resolution: {integrity: sha512-xYhxiMUPh1JzamVK8VwwkBpIBXVYRyIBW9gjSN+/BB4kL1nS86gnRWeW8L+sacCj1RiyEsysJe3GSvtbIpHdWw==}
+    dev: false
+
+  /@tanstack/react-query@5.24.6(react@18.2.0):
+    resolution: {integrity: sha512-eyIWwHiO1ZirYGzqs0kfRMkf8icuXroFunjnsgntk9YgGFbGoPs3Hxy9/OushNvpnkHT9RwPZb8UfEKzMzzEaQ==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-core': 5.24.6
+      react: 18.2.0
+    dev: false
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -2083,6 +2119,10 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /stable-hash@0.0.4:
+    resolution: {integrity: sha512-LjdcbuBeLcdETCrPn9i8AYAZ1eCtu4ECAWtP7UleOiZ9LzVxRzzUZEoZ8zB24nhkQnDWyET0I+3sWokSDS3E7g==}
+    dev: false
 
   /string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}

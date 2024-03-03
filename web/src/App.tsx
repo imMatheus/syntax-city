@@ -1,19 +1,18 @@
-import { createPromiseClient } from "@connectrpc/connect";
-import { createConnectTransport } from "@connectrpc/connect-web";
-import { GameService } from "./gen/game/v1/game_connect";
+import { TransportProvider } from "@connectrpc/connect-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Board } from "./views/Board";
+import { transport } from "./gprc";
 
-const transport = createConnectTransport({
-  baseUrl: "http://localhost:8080",
-});
+const queryClient = new QueryClient();
 
-// Here we make the client itself, combining the service
-// definition with the transport.
-const client = createPromiseClient(GameService, transport);
-const data = await client.getGame({ gameId: "abc" });
-
-console.log(data);
 function App() {
-  return <div className="bg-blue-400">Syntax city</div>;
+  return (
+    <TransportProvider transport={transport}>
+      <QueryClientProvider client={queryClient}>
+        <Board />
+      </QueryClientProvider>
+    </TransportProvider>
+  );
 }
 
 export default App;
